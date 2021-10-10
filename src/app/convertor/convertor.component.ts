@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CurrencyService} from "../sahred/currency.service";
+import {CurrencyService} from "../shared/currency.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Convertor} from "../sahred/convertor";
-import {ConvertorService} from "../sahred/convertor.service";
+import {Convertor} from "../shared/convertor";
+import {ConvertorService} from "../shared/convertor.service";
 
 @Component({
   selector: 'app-convertor',
