@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <span>Currency Converter</span>
+</mat-toolbar>
+
+<mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form" [formGroup]="form" (ngSubmit)="getRates()">
+
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Amount</mat-label>
+        <label>
+          <input formControlName="amount" matInput type="number" placeholder="Amount" required>
+        </label>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>From</mat-label>
+        <mat-select formControlName="from" required>
+          <mat-option *ngFor="let currency of currencies" [value]="currency"> {{currency}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>To</mat-label>
+        <mat-select formControlName="to" required>
+          <mat-option *ngFor="let currency of currencies" [value]="currency"> {{currency}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button mat-raised-button >Register</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+
+  <mat-card>Rates: </mat-card>
+</mat-card>
