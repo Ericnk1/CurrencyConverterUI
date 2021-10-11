@@ -28,7 +28,7 @@
       </mat-form-field>
 
       <mat-card-actions>
-        <button mat-raised-button >Convert</button>
+        <button mat-raised-button [disabled]="form.invalid">Convert</button>
       </mat-card-actions>
     </form>
   </mat-card-content>
