@@ -16,7 +16,7 @@
       <mat-form-field appearance="fill" class="example-full-width">
         <mat-label>From</mat-label>
         <mat-select formControlName="from" required>
-          <mat-option *ngFor="let currency of currencies" [value]="currency"> {{currency}} </mat-option>
+          <mat-option value="EUR"> EUR </mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -28,7 +28,7 @@
       </mat-form-field>
 
       <mat-card-actions>
-        <button mat-raised-button [disabled]="form.invalid">Convert</button>
+        <button mat-raised-button [disabled]="form.invalid" color="primary">Convert</button>
       </mat-card-actions>
     </form>
   </mat-card-content>

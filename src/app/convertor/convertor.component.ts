@@ -38,8 +38,7 @@ export class ConvertorComponent implements OnInit {
       amount: this.form.get('amount')?.value
     };
     this.convertorService.get(convertor).subscribe(value => this.result = value);
-    this.initForm();
-    console.log(convertor);
+    //this.initForm();
   }
 
 }
