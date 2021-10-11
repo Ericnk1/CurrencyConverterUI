@@ -3,6 +3,7 @@ import {CurrencyService} from "../shared/currency.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Convertor} from "../shared/convertor";
 import {ConvertorService} from "../shared/convertor.service";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-convertor',
@@ -13,7 +14,7 @@ export class ConvertorComponent implements OnInit {
 
   form!: FormGroup;
   currencies!: string[];
-
+  result!: number;
   constructor(private currencyService: CurrencyService, private fb: FormBuilder, private convertorService: ConvertorService) { }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class ConvertorComponent implements OnInit {
       to: this.form.get('to')?.value,
       amount: this.form.get('amount')?.value
     };
-    this.convertorService.get(convertor).subscribe(value => window.location.assign('home'));
+    this.convertorService.get(convertor).subscribe(value => this.result = value);
     this.initForm();
     console.log(convertor);
   }
